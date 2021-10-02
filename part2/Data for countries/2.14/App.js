@@ -9,9 +9,8 @@ const App = () => {
     axios
       .get("https://restcountries.com/v2/all")
         .then(response => 
-            setCountries(response.data.map(item => item)),
-          response => alert(response)
-        )
+            setCountries(response.data.map(item => item))
+        ).catch(error => alert(`Error fetching country details: ${error}`))
   }, []      
   )
 

@@ -1,6 +1,8 @@
 import Languages from "./Languages"
+import Weather from "./Weather"
 
 const Country = ({country, setCountry, showDetails}) => {
+    
     if (showDetails){
         return (
         <div>
@@ -12,6 +14,7 @@ const Country = ({country, setCountry, showDetails}) => {
             <Languages languages={country.languages} />
             </ul>
             <img src={country.flag || country.flags[0]} alt={country.name} />
+            <Weather country={country.name} />
         </div>
         )
     }
